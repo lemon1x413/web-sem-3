@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Gravitas+One&display=swap');
+
+body {
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+    font-weight: 400;
+    margin: 0;
+}
+
+.container {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 2fr 4fr 2fr;
+    grid-template-rows: 2fr 6fr 0.5fr 2fr;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+}
+
+.header {
+    grid-column: 1/4;
+    grid-row: 1/2;
+    justify-content: space-between;
+    color: #14213D;
+    background-color: #fca311;
+}
+
+.menu {
+    grid-column: 1/2;
+    grid-row: 2/5;
+    flex-direction: column;
+    align-items: baseline;
+    background-color: #14213D;
+    color: #E5E5E5;
+    font-size: 3vh;
+}
+
+.center {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    align-items: baseline;
+    flex-direction: column;
+    background-color: #E5E5E5;
+    color: #14213D;
+    font-size: 3vh;
+}
+
+.pic {
+    grid-column: 3/4;
+    grid-row: 2/4;
+    padding: 0;
+    justify-content: center;
+    background-color: #14213D;
+}
+
+.center-footer {
+    grid-column: 2/3;
+    grid-row: 3/4;
+    justify-content: center;
+    background-color: #E5E5E5;
+    color: #14213D;
+}
+
+.footer {
+    grid-column: 2/4;
+    grid-row: 4/5;
+    justify-content: space-between;
+    background-color: #fca311;
+    color: #14213D;
+}
+
+.x {
+    background-color: none;
+    text-align: right;
+}
+
+.y {
+    background-color: none;
+    justify-content: center;
+}
+
+.gravitas-one-regular {
+    font-family: "Gravitas One", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h1 {
+    font-size: 5vh;
+}
+
+h2 {
+    font-size: 4vh;
+}
+
+p {
+    font-size: 3vh;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.img-map {
+    max-width: 760px;
+}
+
+a {
+    color: #fca311;
+}
