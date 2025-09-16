@@ -35,7 +35,7 @@ body {
     align-items: baseline;
     background-color: #14213D;
     color: #E5E5E5;
-    font-size: 3vh;
+    font-size: 2vh;
 }
 
 .center {
@@ -45,7 +45,7 @@ body {
     flex-direction: column;
     background-color: #E5E5E5;
     color: #14213D;
-    font-size: 3vh;
+    font-size: 2vh;
 }
 
 .pic {
@@ -89,15 +89,15 @@ body {
 }
 
 h1 {
-    font-size: 5vh;
-}
-
-h2 {
     font-size: 4vh;
 }
 
-p {
+h2 {
     font-size: 3vh;
+}
+
+p {
+    font-size: 2vh;
 }
 
 img {
