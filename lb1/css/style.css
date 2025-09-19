@@ -51,9 +51,10 @@ body {
 .pic {
     grid-column: 3/4;
     grid-row: 2/4;
-    padding: 0;
     justify-content: center;
     background-color: #14213D;
+    color: #E5E5E5;
+    flex-direction: column;
 }
 
 .center-footer {
