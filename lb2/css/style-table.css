@@ -9,12 +9,12 @@ body {
 
 .x {
     background-color: none;
-    text-align: right;
+    justify-content: flex-end;
 }
 
 .y {
     background-color: none;
-    justify-content: center;
+    justify-content: flex-end;
 }
 
 .gravitas-one-regular {
