@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Gravitas+One&display=swap');
+
+body {
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+    font-weight: 400;
+    margin: 0;
+}
+
+.x {
+    background-color: none;
+    text-align: right;
+}
+
+.y {
+    background-color: none;
+    justify-content: center;
+}
+
+.gravitas-one-regular {
+    font-family: "Gravitas One", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h1 {
+    font-size: 4vh;
+}
+
+h2 {
+    font-size: 3vh;
+}
+
+p {
+    font-size: 2vh;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.img-map {
+    max-width: 760px;
+}
+
+a {
+    color: #fca311;
+}
+
+/* Файл: variant14-flex.css */
+html,
+body {
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    /* КОЛОНКА: Header + main-content */
+    min-height: 100vh;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    padding: 4vh;
+    box-sizing: border-box;
+}
+
+/* Блок 1: Header */
+.header {
+    height: 20vh;
+    flex-shrink: 0;
+    justify-content: space-between;
+    color: #14213D;
+    background-color: #fca311;
+}
+
+/* РЯДОК: Menu + right-area */
+.main-content {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    /* Займає решту висоти */
+}
+
+/* Блок 2: Menu (1fr) */
+.menu {
+    flex-basis: 25%;
+    /* 1fr */
+    flex-direction: column;
+    align-items: baseline;
+    background-color: #14213D;
+    color: #E5E5E5;
+    font-size: 2vh;
+}
+
+/* КОЛОНКА: top-right + Footer (3fr) */
+.right-area {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 75%;
+    /* 3fr (2fr + 1fr) */
+}
+
+/* РЯДОК: middle-column + Pic */
+.top-right {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    /* Займає 'auto' висоту (R2 + R3) */
+}
+
+/* КОЛОНКА: Center + C-Footer (2fr) */
+.middle-column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 66.66%;
+    /* 2fr */
+}
+
+/* Блок 3: Center ('auto' висота) */
+.center {
+    flex-grow: 1;
+    align-items: baseline;
+    flex-direction: column;
+    background-color: #E5E5E5;
+    color: #14213D;
+    font-size: 2vh;
+}
+
+/* Блок 5: C-Footer (10vh висота) */
+.center-footer {
+    height: 10vh;
+    flex-shrink: 0;
+    justify-content: center;
+    background-color: #E5E5E5;
+    color: #14213D;
+}
+
+/* Блок 4: Pic (1fr) */
+.pic {
+    flex-basis: 33.33%;
+    /* 1fr */
+    justify-content: center;
+    background-color: #14213D;
+    color: #E5E5E5;
+    flex-direction: column;
+}
+
+/* Блок 6: Footer (20vh висота) */
+.footer {
+    height: 20vh;
+    flex-shrink: 0;
+    justify-content: space-between;
+    background-color: #fca311;
+    color: #14213D;
+}
