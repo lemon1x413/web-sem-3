@@ -6,39 +6,96 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main page</title>
     <style>
-        .content {
+        @import url('https://fonts.googleapis.com/css2?family=Gravitas+One&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+            font-weight: 400;
+            min-height: 100vh;
+            padding: 0rem 2rem;
+            background-color: #E5E5E5;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: start;
         }
 
         .container {
-            padding: 1rem;
+            max-width: 900px;
+            width: 100%;
+        }
 
+        .container .header {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .content {
+            height: 100%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+            gap: 2rem;
+        }
+
+        .labs-content {
+            text-align: center;
+            background-color: #fca311;
+            box-shadow: 1rem 1rem 1rem #d1d0d0;
+            padding: 1rem;
+        }
+
+        h2 {
+            margin-bottom: 1rem;
+            font-size: 24pt;
+        }
+
+        a {
+            display: block;
+            background-color: #14213D;
+            color: #E5E5E5;
+            padding: 1rem;
+            text-decoration: none;
+            margin-top: 1rem;
+        }
+
+        .gravitas-one-regular {
+            font-family: "Gravitas One", serif;
+            font-weight: 300;
+            font-style: normal;
         }
     </style>
 </head>
 
 <body>
-    <div class="content">
-        <div class="container">
-            <h1>Lab 1</h1>
-            <p>Розробка HTML-структур та візуалізація з допомогою CSS</p>
-            <a href="lb1/index.html">Перейти</a>
+    <div class="container">
+        <div class="header">
+            <h1 class="gravitas-one-regular">Web labs</h1>
         </div>
-        <div class="container">
-            <h1>Lab 2</h1>
-            <p>Верстка вебсторінок за допомогою CSS</p>
-            <a href="lb2/index.html">Перейти</a>
+        <div class="content">
+            <div class="labs-content">
+                <h2 class="gravitas-one-regular">1</h2>
+                <p>Розробка HTML-структур та візуалізація з допомогою CSS</p>
+                <a href="lb1/index.html">Перейти</a>
+            </div>
+            <div class="labs-content">
+                <h2 class="gravitas-one-regular">2</h2>
+                <p>Верстка вебсторінок за допомогою CSS</p>
+                <a href="lb2/index.html">Перейти</a>
 
-        </div>
-        <div class="container">
-            <h1>Lab 3</h1>
-            <p>Розробка поштової та мобільної версії вебсторінки</p>
-            <a href="lb3/index.html">Перейти</a>
+            </div>
+            <div class="labs-content">
+                <h2 class="gravitas-one-regular">3</h2>
+                <p>Розробка поштової та мобільної версії вебсторінки</p>
+                <a href="lb3/index.html">Перейти</a>
 
+            </div>
         </div>
     </div>
+
 </body>
 
 </html>
