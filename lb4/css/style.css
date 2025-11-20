@@ -28,8 +28,8 @@ body {
 }
 
 p {
-    margin: 0 2vw 2vw 12vw;
-    width: 30vw;
+    margin: 0 2vw 2vw 16vw;
+    width: 24vw;
 }
 
 .content {
@@ -42,15 +42,15 @@ p {
 }
 
 .caption {
+    position: relative;
+    left: 15vw;
+    top: 8vw;
     width: 300px;
-    padding: 8rem;
-    margin-top: 4vw;
-    margin-left: 20vw;
+    padding: 5vw 14vw 5vw 2vw;
     background-color: #fff;
-    font-size: 24px;
+    font-size: 2.5vh;
+    z-index: 2;
 }
-
-h1 {}
 
 .right {
     width: 65vw;
@@ -59,6 +59,7 @@ h1 {}
 .picture {
     margin-left: 10vw;
     margin-top: -16vh;
+    z-index: 1;
 }
 
 img {
@@ -71,4 +72,47 @@ img {
     font-family: "Patua One", serif;
     font-weight: 400;
     font-style: normal;
+}
+
+@media (max-width: 768px) {
+    .container {
+        display: grid;
+        grid-template-rows: 5fr 3fr;
+    }
+
+    .header {
+        background-color: #fff;
+        width: 100%;
+        font-size: 4vw;
+        display: flex;
+        align-items: start;
+    }
+
+    p {
+        margin: 15vw;
+        width: 70vw;
+    }
+
+    .caption {
+        position: relative;
+        left: 15vw;
+        top: 15vw;
+        width: 300px;
+        padding: 8vw 25vw 8vw 2vw;
+        background-color: #fff;
+        font-size: 4vw;
+        z-index: 2;
+    }
+
+    .picture {
+        margin-left: -15vw;
+        margin-top: -20vw;
+        z-index: 1;
+    }
+
+    img {
+        height: 80vw;
+        width: 70vw;
+        object-fit: cover;
+    }
 }
