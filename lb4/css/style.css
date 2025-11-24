@@ -97,16 +97,16 @@ img {
         position: relative;
         left: 15vw;
         top: 15vw;
-        width: 300px;
+        width: 40vw;
         padding: 8vw 25vw 8vw 2vw;
         background-color: #fff;
-        font-size: 4vw;
+        font-size: 3vw;
         z-index: 2;
     }
 
     .picture {
         margin-left: -15vw;
-        margin-top: -20vw;
+        margin-top: -25vw;
         z-index: 1;
     }
 
