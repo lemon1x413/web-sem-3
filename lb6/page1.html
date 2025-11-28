@@ -52,6 +52,27 @@
     <script>
         let masonryItems = [];
 
+        async function loadMasonryItems() {
+            try {
+                const response = await fetch('server.php');
+                const data = await response.json();
+
+                data.forEach((item) => {
+                    const masonryItem = {
+                        image: item.image,
+                        text: item.text,
+                        id: item.id
+                    };
+
+                    masonryItems.push(masonryItem);
+                })
+                renderList();
+            } catch (error) {
+                console.error('Error loading data:', error);
+            }
+        }
+        loadMasonryItems();
+
         function addItem() {
             const img = document.getElementById('imgUrl').value;
             const text = document.getElementById('desc').value;
@@ -80,6 +101,22 @@
             masonryItems.forEach((item, index) => {
                 const li = document.createElement('li');
                 li.textContent = `Item ${index + 1}: ${item.text.substring(0, 20)}...`;
+                const delBtn = document.createElement('button');
+                delBtn.innerText = '✖';
+                Object.assign(delBtn.style, {
+                    marginLeft: '10px',
+                    color: 'red',
+                    border: 'none',
+                    background: 'none',
+                    cursor: 'pointer',
+                    fontWeight: 'bold'
+                });
+                delBtn.onclick = () => {
+                    newMasonryItems = masonryItems.filter(masonryItem => masonryItem.id !== item.id);
+                    masonryItems = [...newMasonryItems];
+                    renderList();
+                };
+                li.appendChild(delBtn);
                 list.appendChild(li);
             });
         }
