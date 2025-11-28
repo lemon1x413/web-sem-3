@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vinyls store</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="content header">
+            <h1>Gallery</h1>
+            <div class="content gravitas-one-regular x">
+                <h2>Vinyls store</h2>
+            </div>
+        </div>
+        <div class="content menu">
+            <h2>Menu</h2>
+            <ul>
+                <li><a href="page1.html">Admin</a></li>
+                <li><a href="page2.html">View</a></li>
+            </ul>
+        </div>
+        <div class="content center" style="display: block;">
+            <h2>Masonry Layout</h2>
+            <div id="masonryContainer" class="masonry-wrapper">
+                <p>Loading...</p>
+            </div>
+            <p style="font-size: 10px; color: gray;">Updating automatically every 5 sec...</p>
+        </div>
+        <div class="content pic"><img src="img/vinyl.jpg" alt="vinyl"></div>
+        <div class="content center-footer">
+            <p class="gravitas-one-regular"> &copy; Vinyls store 2025 </p>
+        </div>
+        <div class="content footer">
+            <p>The best vinyls store in the world</p>
+            <div class="content gravitas-one-regular y">
+                <h2>Vinyls store</h2>
+            </div>
+        </div>
+    </div>
+    <script>
+        let currentDataHash = '';
+
+        async function loadData() {
+            try {
+                const response = await fetch('server.php');
+                const data = await response.json();
+
+                const newDataHash = JSON.stringify(data);
+                if (newDataHash !== currentDataHash) {
+                    currentDataHash = newDataHash;
+                    renderMasonry(data);
+                    console.log("Data updated from server");
+                }
+
+            } catch (error) {
+                console.error('Error loading data:', error);
+            }
+        }
+
+        function renderMasonry(items) {
+            const container = document.getElementById('masonryContainer');
+            container.innerHTML = '';
+
+            if (items.length === 0) {
+                container.innerHTML = '<p>No items yet.</p>';
+                return;
+            }
+
+            items.forEach(item => {
+                const div = document.createElement('div');
+                div.className = 'masonry-item';
+
+                div.innerHTML = `
+                    <img src="${item.image}" alt="img">
+                    <div class="masonry-content">
+                        <p>${item.text}</p>
+                    </div>
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        loadData();
+
+        setInterval(loadData, 5000);
+    </script>
+</body>
+
+</html>

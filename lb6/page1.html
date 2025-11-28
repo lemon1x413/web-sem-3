@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vinyls store</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="content header">
+            <h1>Admin Panel</h1>
+            <div class="content gravitas-one-regular x">
+                <h2>Vinyls store</h2>
+            </div>
+        </div>
+        <div class="content menu">
+            <h2>Menu</h2>
+            <ul>
+                <li><a href="page1.html">Admin</a></li>
+                <li><a href="page2.html">View</a></li>
+            </ul>
+        </div>
+        <div class="content center">
+            <h2>Create Masonry Items</h2>
+            <p>Add items to display on Page 2.</p>
+            <div class="form-group">
+                <input type="text" id="imgUrl" placeholder="Image URL (e.g., https://picsum.photos/200/300)">
+                <textarea id="desc" placeholder="Description text"></textarea>
+                <button onclick="addItem()">Add Item</button>
+            </div>
+            <h3>Current Items (Draft):</h3>
+            <ul id="itemList"></ul>
+            <button onclick="saveToServer()" style="margin-top: 20px; background-color: green; color: white;">SAVE TO
+                SERVER</button>
+            <p id="status"></p>
+        </div>
+        <div class="content pic"><img src="img/vinyl.jpg" alt="vinyl"></div>
+        <div class="content center-footer">
+            <p class="gravitas-one-regular"> &copy; Vinyls store 2025 </p>
+        </div>
+        <div class="content footer">
+            <p>The best vinyls store in the world</p>
+            <div class="content gravitas-one-regular y">
+                <h2>Vinyls store</h2>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let masonryItems = [];
+
+        function addItem() {
+            const img = document.getElementById('imgUrl').value;
+            const text = document.getElementById('desc').value;
+
+            if (!img || !text) {
+                alert("Please fill fields");
+                return;
+            }
+
+            const item = {
+                image: img,
+                text: text,
+                id: Date.now()
+            };
+
+            masonryItems.push(item);
+            renderList();
+
+            document.getElementById('imgUrl').value = '';
+            document.getElementById('desc').value = '';
+        }
+
+        function renderList() {
+            const list = document.getElementById('itemList');
+            list.innerHTML = '';
+            masonryItems.forEach((item, index) => {
+                const li = document.createElement('li');
+                li.textContent = `Item ${index + 1}: ${item.text.substring(0, 20)}...`;
+                list.appendChild(li);
+            });
+        }
+
+        async function saveToServer() {
+            try {
+                const response = await fetch('server.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(masonryItems)
+                });
+
+                const result = await response.json();
+                document.getElementById('status').innerText = result.message;
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('status').innerText = "Error saving data";
+            }
+        }
+    </script>
+</body>
+
+</html>
